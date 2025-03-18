@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><3</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/avatars/949256098391679016/83421f940f7309839fd6b6de0d535f57.png?size=1024&width=640&height=640">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="minecraft-font.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="music-player">
+        <audio id="audio-player" src=""></audio>
+        <div class="song-info typewriter">
+            <div class="song-title"></div>
+            <div class="artist-name"></div>
+        </div>
+        <div class="controls">
+            <button class="control-btn previous">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button class="control-btn play-pause">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-btn next">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" min="0" max="100" value="100">
+        </div>
+    </div>
+
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    
+    <div class="friends-list section">
+        <div class="friend-item">
+            <div class="friend-pfp">
+                <img src="https://cdn.discordapp.com/avatars/953452463107747870/6d9b90aa5c840dfa4789e560f0828134.png?size=1024&width=640&height=640" alt="Faith">
+            </div>
+            <span class="friend-rank">#1</span>
+            <span class="friend-name">Faith</span>
+        </div>
+        <div class="friend-item">
+            <div class="friend-pfp">
+                <img src="https://cdn.discordapp.com/avatars/720812016578854953/6c48f070eb3850a7f48f48e2f91a0dc0.png?size=1024&width=640&height=640" alt="Injvis">
+            </div>
+            <span class="friend-rank">#2</span>
+            <span class="friend-name">Injvis</span>
+        </div>
+        <div class="friend-item">
+            <div class="friend-pfp">
+                <img src="https://cdn.discordapp.com/avatars/834194114131132446/a_0e1e4a5895cfd93eb0be4c5be3d88a45.gif?size=1024&width=640&height=640" alt="Wagner">
+            </div>
+            <span class="friend-rank">#3</span>
+            <span class="friend-name">Wagner</span>
+        </div>
+        <div class="friend-item">
+            <div class="friend-pfp">
+                <img src="https://cdn.discordapp.com/avatars/1252810926558674955/b803edb096c58fd862dd24694e290849.png?size=1024&width=640&height=640" alt="Sully">
+            </div>
+            <span class="friend-rank">#4</span>
+            <span class="friend-name">Sully</span>
+        </div>
+        <div class="friend-item">
+            <div class="friend-pfp">
+                <img src="https://cdn.discordapp.com/avatars/1088332898899329075/52399860d4c3bfa22872a3e044cc7520.png?size=1024&width=640&height=640" alt="No Gun">
+            </div>
+            <span class="friend-rank">#5</span>
+            <span class="friend-name">No Gun</span>
+        </div>
+    </div>
+
+    <div class="about-container section">
+        <div class="about-card">
+            <div class="profile-image">
+                <img src="https://cdn.discordapp.com/avatars/949256098391679016/83421f940f7309839fd6b6de0d535f57.png?size=1024&width=640&height=640" alt="Profile Picture">
+            </div>
+            <h1>Lfau</h1>
+            <p class="tagline">Founder of Aestar & Owner at Lurid<span class="dev-text">.dev</span></p>
+            
+            <div class="about-text">
+                <p>Hey there! I'm a passionate GFX enthusiast and the owner of Lurid.dev, I'm the founder and owner of Aestar, Music is a huge part of my life and fuels my creativity. Whether I'm designing or just vibing, you'll always find me with some tunes playing.</p>
+                
+                <div class="quick-info section">
+                    <div class="info-item">
+                        <i class="fas fa-crown"></i>
+                        <span>Founder at Aestar</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-code"></i>
+                        <span>Owner at Lurid<span class="dev-text">.dev</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links section">
+                <a href="https://discord.gg/lurid" class="social-link lurid-discord" title="Lurid Discord">
+                    <i class="fab fa-discord"></i>
+                    <span>Lurid Discord</span>
+                </a>
+                <a href="https://discord.gg/qsEMcXfsP6" class="social-link" title="Aestar Discord">
+                    <i class="fab fa-discord"></i>
+                    <span>Aestar Discord</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="watermark">Made by <span class="name">lfau</span> 💜</div>
+
+    <div class="overlay"></div>
+    <div class="message-container">
+        <div class="message-content">
+            <h2>You are awesome sauce man!</h2>
+        </div>
+    </div>
+
+    <script>
+        const playlist = [
+            {
+                title: "The Spins",
+                artist: "Mac Miller",
+                file: "SpotiDown.App - The Spins - Mac Miller, Empire Of The Sun.mp3"
+            },
+            {
+                title: "Habits (Stay High)",
+                artist: "Tove Lo",
+                file: "SpotiDown.App - Habits (Stay High) - Tove Lo.mp3"
+            },
+            {
+                title: "Hide Away",
+                artist: "Daya",
+                file: "SpotiDown.App - Hide Away - Daya.mp3"
+            },
+            {
+                title: "Like a Prayer",
+                artist: "Madonna",
+                file: "SpotiDown.App - Like a Prayer - Madonna.mp3"
+            },
+            {
+                title: "Super Bass",
+                artist: "Nicki Minaj",
+                file: "SpotiDown.App - Super Bass - Nicki Minaj.mp3"
+            }
+        ];
+
+        let audioContext;
+        let analyser;
+        let source;
+        let animationFrame;
+        let eqBars = document.querySelectorAll('.eq-bar');
+
+        // Initialize Web Audio API
+        function initAudioContext() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            
+            // Connect the audio nodes
+            source = audioContext.createMediaElementSource(audioPlayer);
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+        }
+
+        // Function to animate equalizer
+        function animate() {
+            if (!analyser) return;
+            
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
+            analyser.getByteFrequencyData(dataArray);
+
+            eqBars.forEach((bar, index) => {
+                const value = dataArray[index] / 255;
+                bar.style.transform = `scaleY(${value})`;
+            });
+
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseBtn = document.querySelector('.play-pause');
+        const previousBtn = document.querySelector('.previous');
+        const nextBtn = document.querySelector('.next');
+        const songTitle = document.querySelector('.song-title');
+        const artistName = document.querySelector('.artist-name');
+        const volumeSlider = document.querySelector('.volume-slider');
+        const volumeIcon = document.querySelector('.volume-control i');
+        let currentSongIndex = 0;
+
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Function to update song info with typewriter effect
+        function updateSongInfo(title, artist) {
+            // Reset the song title animation
+            songTitle.style.animation = 'none';
+            void songTitle.offsetWidth; // Trigger reflow
+            songTitle.style.animation = 'typing 2.5s steps(30, end), blink-caret .75s step-end infinite';
+            
+            // Update text content
+            songTitle.textContent = title;
+            artistName.textContent = artist;
+        }
+
+        // Function to play a song
+        async function playSong(index) {
+            try {
+                const song = playlist[index];
+                audioPlayer.src = song.file;
+                updateSongInfo(song.title, song.artist);
+                
+                try {
+                    // Create new audio context if it doesn't exist
+                    if (!audioContext) {
+                        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        analyser = audioContext.createAnalyser();
+                        analyser.fftSize = 256;
+                    }
+                    
+                    // Resume the audio context
+                    if (audioContext.state === 'suspended') {
+                        await audioContext.resume();
+                    }
+                    
+                    // Play the audio
+                    await audioPlayer.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    animate();
+                } catch (error) {
+                    console.error("Playback failed:", error);
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            } catch (error) {
+                console.error("Error playing song:", error);
+            }
+        }
+
+        // Initialize first song on page load
+        window.addEventListener('load', () => {
+            const song = playlist[0];
+            audioPlayer.src = song.file;
+            audioPlayer.volume = volumeSlider.value / 100;
+            updateSongInfo(song.title, song.artist);
+            
+            // Initialize audio context
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+        });
+
+        // Play/Pause button functionality
+        playPauseBtn.addEventListener('click', async () => {
+            if (!audioPlayer.src || audioPlayer.src === '') {
+                await playSong(currentSongIndex);
+            } else if (audioPlayer.paused) {
+                try {
+                    if (audioContext && audioContext.state === 'suspended') {
+                        await audioContext.resume();
+                    }
+                    await audioPlayer.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    animate();
+                } catch (error) {
+                    console.error("Play failed:", error);
+                }
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                cancelAnimationFrame(animationFrame);
+            }
+        });
+
+        // Previous button
+        previousBtn.addEventListener('click', async () => {
+            currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+            await playSong(currentSongIndex);
+        });
+
+        // Next button
+        nextBtn.addEventListener('click', async () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            await playSong(currentSongIndex);
+        });
+
+        // Volume control
+        volumeSlider.addEventListener('input', (e) => {
+            const volume = e.target.value / 100;
+            audioPlayer.volume = volume;
+            updateVolumeIcon(volume);
+        });
+
+        function updateVolumeIcon(volume) {
+            if (volume === 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (volume < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+
+        // Play next song when current one ends
+        audioPlayer.addEventListener('ended', () => {
+            currentSongIndex = (currentSongIndex + 1) % playlist.length;
+            playSong(currentSongIndex);
+        });
+
+        // Handle audio errors
+        audioPlayer.addEventListener('error', (e) => {
+            console.error("Audio error:", e);
+            updateSongInfo("Error loading audio", "");
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+
+        // Update the click handler for Faith
+        const faithElement = document.querySelector('.friend-item:first-child');
+        const messageContainer = document.querySelector('.message-container');
+        const overlay = document.querySelector('.overlay');
+
+        if (faithElement && messageContainer && overlay) {
+            faithElement.style.cursor = 'pointer';
+            
+            faithElement.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Faith clicked');
+                
+                // Force display block first
+                messageContainer.style.display = 'flex';
+                overlay.style.display = 'block';
+                
+                // Force a reflow
+                void messageContainer.offsetWidth;
+                void overlay.offsetWidth;
+                
+                // Then add active class for animations
+                messageContainer.classList.add('active');
+                overlay.classList.add('active');
+            });
+
+            overlay.addEventListener('click', (e) => {
+                e.preventDefault();
+                messageContainer.classList.remove('active');
+                overlay.classList.remove('active');
+                
+                // Wait for transition to complete before hiding
+                setTimeout(() => {
+                    messageContainer.style.display = 'none';
+                    overlay.style.display = 'none';
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html> 
